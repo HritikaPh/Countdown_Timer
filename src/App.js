@@ -1,10 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import './App.css'; // Import your CSS file
+import './App.css';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause, faUndo } from '@fortawesome/free-solid-svg-icons';
 
 const App = () => {
-  const [initialMinutes, setInitialMinutes] = useState(0);
+  // const [initialMinutes, setInitialMinutes] = useState(0);
   const [inputMinutes, setInputMinutes] = useState(0);
   const [totalSeconds, setTotalSeconds] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
@@ -25,6 +25,7 @@ const App = () => {
     return () => clearInterval(interval);
   }, [isRunning, totalSeconds]);
 
+  // makeing constants
   const handleStart = () => {
     if (!isRunning) {
       setIsRunning(true);
@@ -62,15 +63,13 @@ const App = () => {
       <h1>Countdown Timer</h1>
       <div>
         <label htmlFor="minutes">Minutes: </label>
-        <input
-          type="number"
-          id="minutes"
+        <input type="number" id="minutes"
           value={isRunning ? Math.floor(totalSeconds / 60) : inputMinutes}
-          onChange={handleChange}
-          disabled={isRunning}
+          onChange={handleChange} disabled={isRunning}
         />
       </div>
       <div>
+
         <p>Time Remaining: {formatTime(isRunning ? totalSeconds : remainingSeconds)}</p>
       </div>
       <div>
@@ -84,8 +83,7 @@ const App = () => {
           </button>
         )}
         <button onClick={handleReset}>
-          <FontAwesomeIcon icon={faUndo} />
-        </button>
+          <FontAwesomeIcon icon={faUndo} /></button>
       </div>
     </div>
   );
