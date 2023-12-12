@@ -4,7 +4,6 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay, faPause, faUndo } from '@fortawesome/free-solid-svg-icons';
 
 const App = () => {
-  // const [initialMinutes, setInitialMinutes] = useState(0);
   const [inputMinutes, setInputMinutes] = useState(0);
   const [totalSeconds, setTotalSeconds] = useState(0);
   const [isRunning, setIsRunning] = useState(false);
